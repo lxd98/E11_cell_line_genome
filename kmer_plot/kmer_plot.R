@@ -1,6 +1,9 @@
+# histo file was created by jellyfish
+
 library(ggplot2)
 library(patchwork)
 
+# test
 k15 <- read.csv("e11_15m.histo", sep = " ", header = F)
 names(k15) <- c("depth", "frequency")
 k15["frequency"] <- k15["frequency"]/1000000
@@ -11,7 +14,7 @@ p1 <- ggplot(data=k15,aes(x=depth, y=frequency))+
   theme_bw() + 
   ylab("Number (×1e6)") + xlab("15-mer depth")
 
-
+# this version was better
 k17 <- read.csv("e11_17m.histo", sep = " ", header = F)
 names(k17) <- c("depth", "frequency")
 k17["frequency"] <- k17["frequency"]/1000000
@@ -23,5 +26,3 @@ p2 <- ggplot(data=k17,aes(x=depth, y=frequency))+
   theme(axis.title=element_text(size=14, colour = "black"),
         axis.text=element_text(size=14, colour = "black"))
 p2
-
-
